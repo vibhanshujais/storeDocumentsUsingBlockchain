@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: #1e1e1e;
+        padding: 20px;
+        border: 1px solid #3d3c3c;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+      }
+      
+      .form input {
+        height: 35px;
+        outline: none;
+        border: 2px solid orange;
+        background: transparent;
+        padding: 20px 10px;
+        border-radius: 5px;
+        transition: .5s;
+        color: white;
+        font-size: 20px;
+      }
+      
+      .form input:focus {
+        background: orange;
+      }
+      
+      .form button {
+        width: 100%;
+        color: white;
+        transition: .5s;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        height: 45px;
+        border-radius: 5px;
+        background: orange;
+        align-self: flex-end;
+      }
+          
+      
+          </style>
+</head>
+<body>
+    <form class="form" method="post" action="{% url 'upload_doc' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{key}}
+        <button type="submit">Submit</button>
+    </form>
+        <!-- {% if form.instance.image %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ form.instance.image.url }}" alt="Uploaded Image">
+        <a href="{% url 'submitted_images' %}">View Submitted Images</a>
+        {% endif %} -->
+</body>
+</html>
