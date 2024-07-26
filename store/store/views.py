@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import DocForm
-from images.models import DocModel
+from stores.models import DocModel
 def form(request):
     a = DocForm()
     data = {'key':a}
