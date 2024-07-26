@@ -1,5 +1,5 @@
 from django import forms
-from images.models import DocModel
+from stores.models import DocModel
 
 class DocForm(forms.ModelForm):
     class Meta:
